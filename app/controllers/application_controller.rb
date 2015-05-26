@@ -1,5 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
+  before_action :verify_bowtie_user
+
 
   def current_user_id
     request.headers['HTTP_X-BOWTIE_USER_ID']
